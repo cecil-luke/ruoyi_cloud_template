@@ -1,0 +1,22 @@
+15:17:38.183 [reactor-http-nio-5] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/,异常信息:404 NOT_FOUND
+15:17:38.479 [reactor-http-nio-5] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/favicon.ico,异常信息:404 NOT_FOUND
+15:22:54.388 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/,异常信息:404 NOT_FOUND
+15:22:54.739 [reactor-http-nio-6] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/,异常信息:404 NOT_FOUND
+15:22:54.934 [reactor-http-nio-5] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/favicon.ico,异常信息:404 NOT_FOUND
+15:22:54.956 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/favicon.ico,异常信息:404 NOT_FOUND
+15:23:02.677 [reactor-http-nio-1] ERROR c.s.g.f.AuthFilter - [unauthorizedResponse,96] - [鉴权异常处理]请求路径:/system/rds-menu,错误信息:令牌不能为空
+15:23:35.326 [reactor-http-nio-5] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/,异常信息:404 NOT_FOUND
+15:23:35.378 [reactor-http-nio-5] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/favicon.ico,异常信息:404 NOT_FOUND
+15:23:42.830 [reactor-http-nio-7] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/,异常信息:404 NOT_FOUND
+15:23:43.174 [reactor-http-nio-7] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/,异常信息:404 NOT_FOUND
+15:23:52.399 [reactor-http-nio-8] ERROR c.s.g.f.AuthFilter - [unauthorizedResponse,96] - [鉴权异常处理]请求路径:/system/rds-menu,错误信息:令牌不能为空
+15:33:34.483 [reactor-http-nio-4] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/,异常信息:404 NOT_FOUND
+15:33:45.781 [reactor-http-nio-5] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/favicon.ico,异常信息:404 NOT_FOUND
+15:33:55.600 [reactor-http-nio-6] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/,异常信息:404 NOT_FOUND
+15:34:08.533 [reactor-http-nio-7] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/favicon.ico,异常信息:404 NOT_FOUND
+15:34:38.335 [reactor-http-nio-8] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/,异常信息:404 NOT_FOUND
+15:34:39.792 [reactor-http-nio-1] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/,异常信息:404 NOT_FOUND
+15:34:56.555 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/,异常信息:404 NOT_FOUND
+15:34:58.096 [reactor-http-nio-3] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/,异常信息:404 NOT_FOUND
+17:10:36.231 [reactor-http-nio-3] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/rds-menu,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+17:10:50.086 [reactor-http-nio-3] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/rds-menu,异常信息:JWT strings must contain exactly 2 period characters. Found: 0

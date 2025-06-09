@@ -1,0 +1,109 @@
+package com.szmtr.system.domain.convert;
+
+import com.szmtr.system.domain.SysFileEntity;
+import com.szmtr.system.dto.SysFileDto;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import javax.annotation.processing.Generated;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-05-22T11:46:56+0800",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.15 (Microsoft)"
+)
+public class SysFileModelConvertImpl implements SysFileModelConvert {
+
+    @Override
+    public SysFileEntity toEntity(SysFileDto dto) {
+        if ( dto == null ) {
+            return null;
+        }
+
+        SysFileEntity sysFileEntity = new SysFileEntity();
+
+        sysFileEntity.setCreateBy( dto.getCreateBy() );
+        if ( dto.getCreateTime() != null ) {
+            sysFileEntity.setCreateTime( LocalDateTime.ofInstant( dto.getCreateTime().toInstant(), ZoneId.of( "UTC" ) ) );
+        }
+        sysFileEntity.setUpdateBy( dto.getUpdateBy() );
+        if ( dto.getUpdateTime() != null ) {
+            sysFileEntity.setUpdateTime( LocalDateTime.ofInstant( dto.getUpdateTime().toInstant(), ZoneId.of( "UTC" ) ) );
+        }
+        sysFileEntity.setId( dto.getId() );
+        sysFileEntity.setBusinessKey( dto.getBusinessKey() );
+        sysFileEntity.setFileType( dto.getFileType() );
+        sysFileEntity.setBucket( dto.getBucket() );
+        if ( dto.getFileSize() != null ) {
+            sysFileEntity.setFileSize( String.valueOf( dto.getFileSize() ) );
+        }
+        sysFileEntity.setName( dto.getName() );
+        sysFileEntity.setFileNameOld( dto.getFileNameOld() );
+        sysFileEntity.setUrl( dto.getUrl() );
+        sysFileEntity.setDelFlag( dto.getDelFlag() );
+
+        return sysFileEntity;
+    }
+
+    @Override
+    public SysFileDto toDTO(SysFileEntity entity) {
+        if ( entity == null ) {
+            return null;
+        }
+
+        SysFileDto sysFileDto = new SysFileDto();
+
+        sysFileDto.setId( entity.getId() );
+        sysFileDto.setUrl( entity.getUrl() );
+        sysFileDto.setBusinessKey( entity.getBusinessKey() );
+        sysFileDto.setFileType( entity.getFileType() );
+        sysFileDto.setBucket( entity.getBucket() );
+        if ( entity.getFileSize() != null ) {
+            sysFileDto.setFileSize( Long.parseLong( entity.getFileSize() ) );
+        }
+        sysFileDto.setName( entity.getName() );
+        sysFileDto.setFileNameOld( entity.getFileNameOld() );
+        sysFileDto.setDelFlag( entity.getDelFlag() );
+        sysFileDto.setCreateBy( entity.getCreateBy() );
+        if ( entity.getCreateTime() != null ) {
+            sysFileDto.setCreateTime( Date.from( entity.getCreateTime().toInstant( ZoneOffset.UTC ) ) );
+        }
+        sysFileDto.setUpdateBy( entity.getUpdateBy() );
+        if ( entity.getUpdateTime() != null ) {
+            sysFileDto.setUpdateTime( Date.from( entity.getUpdateTime().toInstant( ZoneOffset.UTC ) ) );
+        }
+
+        return sysFileDto;
+    }
+
+    @Override
+    public List<SysFileEntity> toEntityList(List<SysFileDto> dtos) {
+        if ( dtos == null ) {
+            return null;
+        }
+
+        List<SysFileEntity> list = new ArrayList<SysFileEntity>( dtos.size() );
+        for ( SysFileDto sysFileDto : dtos ) {
+            list.add( toEntity( sysFileDto ) );
+        }
+
+        return list;
+    }
+
+    @Override
+    public List<SysFileDto> toDTOList(List<SysFileEntity> entities) {
+        if ( entities == null ) {
+            return null;
+        }
+
+        List<SysFileDto> list = new ArrayList<SysFileDto>( entities.size() );
+        for ( SysFileEntity sysFileEntity : entities ) {
+            list.add( toDTO( sysFileEntity ) );
+        }
+
+        return list;
+    }
+}

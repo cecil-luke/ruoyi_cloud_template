@@ -1,0 +1,4 @@
+com\szmtr\common\rabbitmq\config\RabbitMQConfig.class
+com\szmtr\common\rabbitmq\service\MessageProducer.class
+com\szmtr\common\rabbitmq\service\MessageConsumer.class
+com\szmtr\common\rabbitmq\config\RabbitMqInfo.class

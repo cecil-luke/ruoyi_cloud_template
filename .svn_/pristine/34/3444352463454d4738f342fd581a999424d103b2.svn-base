@@ -1,0 +1,97 @@
+package com.szmtr.business.domain.convert;
+
+import com.szmtr.business.domain.Rdscodetype;
+import com.szmtr.business.dto.RdscodetypeDto;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import javax.annotation.processing.Generated;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-05-22T11:46:56+0800",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.15 (Microsoft)"
+)
+public class RdscodetypeModelConvertImpl implements RdscodetypeModelConvert {
+
+    @Override
+    public Rdscodetype toEntity(RdscodetypeDto dto) {
+        if ( dto == null ) {
+            return null;
+        }
+
+        Rdscodetype rdscodetype = new Rdscodetype();
+
+        rdscodetype.setCreateBy( dto.getCreateBy() );
+        if ( dto.getCreateTime() != null ) {
+            rdscodetype.setCreateTime( LocalDateTime.ofInstant( dto.getCreateTime().toInstant(), ZoneId.of( "UTC" ) ) );
+        }
+        rdscodetype.setUpdateBy( dto.getUpdateBy() );
+        if ( dto.getUpdateTime() != null ) {
+            rdscodetype.setUpdateTime( LocalDateTime.ofInstant( dto.getUpdateTime().toInstant(), ZoneId.of( "UTC" ) ) );
+        }
+        rdscodetype.setId( dto.getId() );
+        rdscodetype.setRdscodetype( dto.getRdscodetype() );
+        rdscodetype.setRdscodetypename( dto.getRdscodetypename() );
+        rdscodetype.setRdsversion( dto.getRdsversion() );
+        rdscodetype.setRdsremark( dto.getRdsremark() );
+
+        return rdscodetype;
+    }
+
+    @Override
+    public RdscodetypeDto toDTO(Rdscodetype entity) {
+        if ( entity == null ) {
+            return null;
+        }
+
+        RdscodetypeDto rdscodetypeDto = new RdscodetypeDto();
+
+        rdscodetypeDto.setId( entity.getId() );
+        if ( entity.getCreateTime() != null ) {
+            rdscodetypeDto.setCreateTime( Date.from( entity.getCreateTime().toInstant( ZoneOffset.UTC ) ) );
+        }
+        rdscodetypeDto.setCreateBy( entity.getCreateBy() );
+        if ( entity.getUpdateTime() != null ) {
+            rdscodetypeDto.setUpdateTime( Date.from( entity.getUpdateTime().toInstant( ZoneOffset.UTC ) ) );
+        }
+        rdscodetypeDto.setUpdateBy( entity.getUpdateBy() );
+        rdscodetypeDto.setRdscodetype( entity.getRdscodetype() );
+        rdscodetypeDto.setRdscodetypename( entity.getRdscodetypename() );
+        rdscodetypeDto.setRdsversion( entity.getRdsversion() );
+        rdscodetypeDto.setRdsremark( entity.getRdsremark() );
+
+        return rdscodetypeDto;
+    }
+
+    @Override
+    public List<Rdscodetype> toEntityList(List<RdscodetypeDto> dtos) {
+        if ( dtos == null ) {
+            return null;
+        }
+
+        List<Rdscodetype> list = new ArrayList<Rdscodetype>( dtos.size() );
+        for ( RdscodetypeDto rdscodetypeDto : dtos ) {
+            list.add( toEntity( rdscodetypeDto ) );
+        }
+
+        return list;
+    }
+
+    @Override
+    public List<RdscodetypeDto> toDTOList(List<Rdscodetype> entities) {
+        if ( entities == null ) {
+            return null;
+        }
+
+        List<RdscodetypeDto> list = new ArrayList<RdscodetypeDto>( entities.size() );
+        for ( Rdscodetype rdscodetype : entities ) {
+            list.add( toDTO( rdscodetype ) );
+        }
+
+        return list;
+    }
+}

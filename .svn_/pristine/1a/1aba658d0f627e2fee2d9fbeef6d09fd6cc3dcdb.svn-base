@@ -1,0 +1,14 @@
+com\szmtr\gen\domain\GenTable.class
+com\szmtr\gen\service\GenTableServiceImpl.class
+com\szmtr\gen\controller\GenController.class
+com\szmtr\gen\config\GenConfig.class
+com\szmtr\gen\service\IGenTableColumnService.class
+com\szmtr\gen\mapper\GenTableMapper.class
+com\szmtr\gen\util\VelocityUtils.class
+com\szmtr\gen\SzmtrGenApplication.class
+com\szmtr\gen\service\IGenTableService.class
+com\szmtr\gen\domain\GenTableColumn.class
+com\szmtr\gen\mapper\GenTableColumnMapper.class
+com\szmtr\gen\util\VelocityInitializer.class
+com\szmtr\gen\service\GenTableColumnServiceImpl.class
+com\szmtr\gen\util\GenUtils.class

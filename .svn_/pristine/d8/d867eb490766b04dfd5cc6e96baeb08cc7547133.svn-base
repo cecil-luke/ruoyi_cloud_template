@@ -1,0 +1,21 @@
+
+# Tomcat
+server:
+  port: 9201
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,
+      org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration,
+      org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8   # 确保序列化时使用 UTC+8
+  application:
+    # 应用名称
+    name: szmtr-system
+  profiles:
+    # 环境配置
+    active: dev
+
+

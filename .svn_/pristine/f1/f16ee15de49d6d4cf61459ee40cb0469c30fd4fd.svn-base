@@ -1,0 +1,7 @@
+com\szmtr\auth\form\LoginBody.class
+com\szmtr\auth\service\SysRecordLogService.class
+com\szmtr\auth\service\SysLoginService.class
+com\szmtr\auth\controller\TokenController.class
+com\szmtr\auth\SzmtrAuthApplication.class
+com\szmtr\auth\form\RegisterBody.class
+com\szmtr\auth\service\SysPasswordService.class

@@ -1,0 +1,115 @@
+package ${packageName}.service.impl;
+
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.szmtr.common.core.utils.StringUtils;
+import ${packageName}.domain.${ClassName};
+import ${packageName}.dto.query.${ClassName}Query;
+import ${packageName}.mapper.${ClassName}Mapper;
+import ${packageName}.service.I${ClassName}Service;
+import com.szmtr.common.core.web.domain.AjaxResult;
+import org.springframework.stereotype.Service;
+import com.szmtr.common.core.utils.bean.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import com.szmtr.common.core.utils.bean.BeanUtils;
+import java.util.List;
+
+import com.szmtr.common.core.utils.uuid.UUID;
+import ${packageName}.dto.*;
+import com.szmtr.system.utils.ModelUtil;
+
+@Service
+@Transactional
+public class ${ClassName}ServiceImpl extends ServiceImpl<${ClassName}Mapper, ${ClassName}> implements I${ClassName}Service {
+
+    @Autowired
+        ${ClassName}Mapper ${className}Mapper;
+
+    @Override
+    public AjaxResult select${ClassName}Page(${ClassName}Query query) {
+        // 构建 MyBatis-Plus 分页对象
+        Page<${ClassName}> page = new Page<>(query.getPageNum(), query.getPageSize());
+        // 动态查询条件
+        LambdaQueryWrapper<${ClassName}> wrapper = buildQueryWrapper(query);
+        wrapper.orderByDesc(${ClassName}::getCreateTime);
+        // 执行分页查询
+        Page<${ClassName}> resultPage = ${className}Mapper.selectPage(page, wrapper);
+        // 转换为若依标准分页响应
+        return AjaxResult.success(resultPage);
+    }
+
+    @Override
+    public List<${ClassName}> select${ClassName}List(${ClassName}Query query) {
+        LambdaQueryWrapper<${ClassName}> wrapper = buildQueryWrapper(query);
+        return ${className}Mapper.selectList(wrapper);
+    }
+
+    ## 私有方法：动态构建查询条件
+    private LambdaQueryWrapper<${ClassName}> buildQueryWrapper(${ClassName}Query ${className}query) {
+            ${ClassName}Dto query = ${className}query.getFilter();
+        LambdaQueryWrapper<${ClassName}> wrapper = new LambdaQueryWrapper<>();
+        #foreach ($column in $columns)
+            #if($column.query)
+                #set($AttrName=$column.javaField.substring(0,1).toUpperCase() + ${column.javaField.substring(1)})
+                #if($column.queryType == "EQ")
+                    if (query.get${AttrName}() != null) {
+                        wrapper.eq(${ClassName}::get${AttrName}, query.get${AttrName}());
+                    }
+                #elseif($column.queryType == "LIKE")
+                    if (StringUtils.isNotBlank(query.get${AttrName}())) {
+                        wrapper.like(${ClassName}::get${AttrName}, query.get${AttrName}());
+                    }
+                #elseif($column.queryType == "BETWEEN")
+                    if (query.getBegin${AttrName}() != null && query.getEnd${AttrName}() != null) {
+                        wrapper.between(${ClassName}::get${AttrName}, query.getBegin${AttrName}(), query.getEnd${AttrName}())
+                        ;
+                    } else {
+                        if (query.getBegin${AttrName}() != null) {
+                            wrapper.ge(${ClassName}::get${AttrName}, query.getBegin${AttrName}());
+                        }
+                        if (query.getEnd${AttrName}() != null) {
+                            wrapper.le(${ClassName}::get${AttrName}, query.getEnd${AttrName}());
+                        }
+                    }
+                #end
+            #end
+        #end
+        return wrapper;
+    }
+
+    public void save(${ClassName}Dto ${className}Dto) {
+        ${ClassName} ${className} =new ${ClassName}();
+            ${className}Dto.setId(UUID.randomUuid());
+        BeanUtils.copyBeanProp(${className}, ${className}Dto);
+        ModelUtil.fillCreateFields(${className});
+            ${className}Mapper.insert(${className});
+    }
+
+    public void update(${ClassName}Dto ${className}Dto) {
+        ${ClassName} ${className} =new ${ClassName}();
+        BeanUtils.copyBeanProp(${className}, ${className}Dto);
+        ModelUtil.fillUpdateFields(${className});
+            ${className}Mapper.updateById(${className});
+    }
+
+    @Override
+    public void saveOrUpdate(${ClassName}Dto ${className}Dto) {
+        if (StringUtils.isEmpty(${className}Dto.getId())) {
+            save(${className}Dto);
+        } else {
+            update(${className}Dto);
+        }
+    }
+
+    @Override
+    public void deleteData(String ids) {
+        if (StringUtils.isNotBlank(ids)) {
+            String[] args = ids.split(",");
+            for (String id : args) {
+                    ${className}Mapper.deleteById(id);
+            }
+        }
+    }
+}

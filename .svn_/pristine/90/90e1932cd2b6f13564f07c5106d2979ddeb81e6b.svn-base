@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>szmtr_cloud</artifactId>
+        <groupId>com.szmtr</groupId>
+        <version>3.6.5</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>szmtr-api-system</artifactId>
+    <description>
+        统接口模块
+    </description>
+
+    <dependencies>
+
+        <!-- RuoYi Common Core-->
+        <dependency>
+            <groupId>com.szmtr</groupId>
+            <artifactId>szmtr-common-core</artifactId>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+</project>

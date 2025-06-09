@@ -1,0 +1,19 @@
+package com.szmtr.business.dto.query;
+
+import com.szmtr.business.dto.RdscodetypeDto;
+import com.szmtr.common.core.web.page.PageDomain;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import com.szmtr.system.dto.*;
+
+import java.io.Serializable;
+
+@Data
+public class RdscodetypeQuery implements Serializable {
+
+    public RdscodetypeDto filter;
+
+    public Integer pageSize;
+
+    public Integer pageNum;
+}

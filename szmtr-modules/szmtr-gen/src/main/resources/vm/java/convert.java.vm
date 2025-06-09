@@ -1,0 +1,30 @@
+package ${packageName}.domain.convert;
+
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
+import java.util.List;
+
+import ${packageName}.domain.${ClassName};
+import ${packageName}.dto.query.${ClassName}Query;
+import ${packageName}.dto.${ClassName}Dto;
+import ${packageName}.service.I${ClassName}Service;
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
+
+@Mapper
+public interface ${ClassName}ModelConvert {
+        ${ClassName}ModelConvert INSTANCE = Mappers.getMapper(${ClassName}ModelConvert.class);
+
+    // 单实体转 DTO
+    // 单个对象转换
+        ${ClassName} toEntity(${ClassName}Dto dto);
+
+        ${ClassName}Dto toDTO(${ClassName} entity);
+
+    // 集合转换
+    List<${ClassName}> toEntityList(List<${ClassName}Dto> dtos);
+
+    List<${ClassName}Dto> toDTOList(List<${ClassName}> entities);
+}

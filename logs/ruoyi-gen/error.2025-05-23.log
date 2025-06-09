@@ -1,0 +1,18 @@
+17:09:37.998 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field genTableMapper in com.szmtr.gen.service.GenTableServiceImpl required a bean of type 'com.szmtr.gen.mapper.GenTableMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.szmtr.gen.mapper.GenTableMapper' in your configuration.
+

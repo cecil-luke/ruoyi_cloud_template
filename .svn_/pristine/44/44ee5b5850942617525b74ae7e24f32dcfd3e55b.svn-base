@@ -1,0 +1,10 @@
+package ${packageName}.mapper;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import ${packageName}.domain.${ClassName};
+
+public interface ${ClassName}Mapper extends BaseMapper<${ClassName}> {
+
+    ## 可选：自定义复杂查询（如关联查询）
+    ## Page<${ClassName}VO> selectCustomPage(Page<${ClassName}VO> page, @Param("query") ${ClassName}Query query);
+}

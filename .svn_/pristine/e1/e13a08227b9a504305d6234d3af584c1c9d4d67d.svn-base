@@ -1,0 +1,91 @@
+package com.szmtr.system.domain.vo;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDateTime;
+
+/**
+ * @ClassName RdsRoleGroupVo
+ * @Author Lss
+ * @Date 2025/5/22
+ * @Description: RDS权限组/角色组VO
+ */
+@Data
+public class RdsRoleGroupVo {
+
+    /** 主键ID */
+    private String id;
+
+    /** 创建时间 */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime createTime;
+
+    /** 创建者 */
+    private String createBy;
+
+    /** 更新时间 */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime updateTime;
+
+    /** 更新者 */
+    private String updateBy;
+
+    /**
+     * 角色组，需保证唯一性
+     */
+    private String rdsRoleGroup;
+
+    /**
+     * 角色名称
+     */
+    private String rdsRoleName;
+
+    /**
+     * 所有地点（项目）权限
+     */
+    private String rdsIsAllSite;
+
+    /**
+     * 状态
+     */
+    private String rdsStatus;
+
+    /**
+     * 权限组编号
+     */
+    private String authGroupCode;
+
+    /**
+     * 权限组名称
+     */
+    private String authGroupName;
+
+    /**
+     * 首页模板
+     */
+    private String homeTemplate;
+
+    /**
+     * 是否独立于他组，0-不独立 1-独立
+     */
+    private Integer isIndependent;
+
+    /**
+     * 是否为所有编码授权该组，0-不授权 1-授权
+     */
+    private Integer hasAllCodeAccess;
+
+    /**
+     * 是否为所有项目授权该组，0-不授权 1-授权
+     */
+    private Integer hasAllProjectAccess;
+
+    /**
+     * 是否为所有人员授权该组，0-不授权 1-授权
+     */
+    private Integer hasAllUserAccess;
+}

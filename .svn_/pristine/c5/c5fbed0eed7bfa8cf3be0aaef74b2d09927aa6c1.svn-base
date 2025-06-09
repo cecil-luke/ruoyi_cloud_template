@@ -1,0 +1,8 @@
+com\szmtr\file\service\MinioSysFileServiceImpl.class
+com\szmtr\file\config\FeignRequestInterceptor.class
+com\szmtr\file\config\ResourcesConfig.class
+com\szmtr\file\config\MinioConfig.class
+com\szmtr\file\utils\FileUploadUtils.class
+com\szmtr\file\service\ISysFileService.class
+com\szmtr\file\controller\SysFileController.class
+com\szmtr\file\SzmtrFileApplication.class

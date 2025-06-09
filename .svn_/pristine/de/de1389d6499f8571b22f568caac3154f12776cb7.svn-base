@@ -1,0 +1,2 @@
+com.szmtr.common.log.service.AsyncLogService
+com.szmtr.common.log.aspect.LogAspect

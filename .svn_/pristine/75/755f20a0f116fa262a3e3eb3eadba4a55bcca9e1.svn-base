@@ -1,0 +1,17 @@
+package ${packageName}.dto.query;
+
+import com.szmtr.common.core.web.page.PageDomain;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import ${packageName}.dto.*;
+import java.io.Serializable;
+
+@Data
+public class ${ClassName}Query implements Serializable {
+
+    public    ${ClassName}Dto filter;
+
+    public Integer pageSize;
+
+    public Integer pageNum;
+}

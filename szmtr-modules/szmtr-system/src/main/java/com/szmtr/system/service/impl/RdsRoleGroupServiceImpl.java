@@ -1,0 +1,169 @@
+package com.szmtr.system.service.impl;
+
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.bean.copier.CopyOptions;
+import cn.hutool.core.util.StrUtil;
+import com.szmtr.common.redis.service.RedisService;
+import com.szmtr.system.domain.PageResults;
+import com.szmtr.system.domain.RdsRoleGroup;
+import com.szmtr.system.domain.vo.RdsRoleGroupVo;
+import com.szmtr.system.dto.RdsRoleGroupDto;
+import com.szmtr.system.dto.query.RdsRoleGroupQuery;
+import com.szmtr.system.service.IRdsRoleGroupService;
+import com.szmtr.system.utils.ModelUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+/**
+ * @ClassName IRdsRoleGroupServiceImpl
+ * @Author Lss
+ * @Date 2025/5/22
+ * @Description: RDS权限组/角色组实现
+ */
+@Service
+public class RdsRoleGroupServiceImpl implements IRdsRoleGroupService {
+
+    private static final String RDSROLEGROUP = "rdsrolegroup:";
+    private static final String INDEX_AUTH_GROUP_CODE = "index:authGroupCode:";
+    private static final String INDEX_AUTH_GROUP_NAME = "index:authGroupName:";
+    private static final String INDEX_IS_INDEPENDENT = "index:isIndependent:";
+
+    @Autowired
+    private RedisService redisService;
+
+    @Override
+    public void addOrUpdate(RdsRoleGroupDto param) {
+        if (StrUtil.isNotBlank(param.getId())) {
+            update(param);
+            return;
+        }
+
+        RdsRoleGroup entity = new RdsRoleGroup();
+        BeanUtil.copyProperties(param, entity);
+        ModelUtil.fillCreateFields(entity);
+        String hashKey = RDSROLEGROUP + entity.getId();
+
+        // 存储主数据
+        Map<String, String> safeMap = BeanUtil.beanToMap(entity)
+                .entrySet().stream()
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        e -> String.valueOf(e.getValue())
+                ));
+        redisService.setCacheMap(hashKey, safeMap);
+
+        // 维护多维度索引
+        updateIndexes(hashKey, entity, true);
+    }
+
+    @Override
+    public void deleteById(String id) {
+        String hashKey = RDSROLEGROUP + id;
+        Map<String, String> oldData = redisService.getCacheMap(hashKey);
+
+        // 删除主数据
+        redisService.deleteObject(hashKey);
+
+        // 清理所有关联索引
+        redisService.getCacheSet(INDEX_AUTH_GROUP_CODE + oldData.get("authGroupCode")).remove(hashKey);
+        redisService.getCacheSet(INDEX_AUTH_GROUP_NAME + oldData.get("authGroupName")).remove(hashKey);
+        redisService.getCacheSet(INDEX_IS_INDEPENDENT + oldData.get("isIndependent")).remove(hashKey);
+    }
+
+    @Override
+    public PageResults<RdsRoleGroupVo> page(RdsRoleGroupQuery param) {
+        Set<String> allKeys = new HashSet<>();
+
+        // 动态索引查询
+        if (StrUtil.isNotBlank(param.getAuthGroupCode())) {
+            allKeys = redisService.getCacheSet(INDEX_AUTH_GROUP_CODE + param.getAuthGroupCode());
+        } else if (StrUtil.isNotBlank(param.getAuthGroupName())) {
+            allKeys = redisService.getCacheSet(INDEX_AUTH_GROUP_NAME + param.getAuthGroupName());
+        } else {
+            allKeys = new HashSet<>(redisService.keys(RDSROLEGROUP + "*"));
+        }
+
+        List<String> keyList = new ArrayList<>(allKeys);
+        int total = keyList.size();
+        int start = (param.getPage() - 1) * param.getPageSize();
+        int end = Math.min(start + param.getPageSize(), total);
+
+        // 分页数据获取（逐条查询方式）
+        List<RdsRoleGroupVo> data = new ArrayList<>();
+        for (String key : keyList.subList(start, end)) {
+            String id = key.replace(RDSROLEGROUP, "");
+            RdsRoleGroupVo vo = getById(id);
+            if (vo != null) {
+                data.add(vo);
+            }
+        }
+
+        // 分页元数据
+        int totalPages = (int) Math.ceil((double) total / param.getPageSize());
+        return new PageResults<>(data, total, param.getPage(), param.getPageSize(), totalPages);
+    }
+
+    @Override
+    public RdsRoleGroupVo getById(String id) {
+        String hashKey = RDSROLEGROUP + id;
+        Map<String, String> dataMap = redisService.getCacheMap(hashKey);
+        RdsRoleGroup rdsRoleGroup = convertToVo(dataMap);
+        RdsRoleGroupVo rdsRoleGroupVo = new RdsRoleGroupVo();
+        BeanUtil.copyProperties(rdsRoleGroup, rdsRoleGroupVo);
+        return  rdsRoleGroupVo;
+    }
+
+    // 更新索引
+    private void updateIndexes(String hashKey, RdsRoleGroup entity, boolean isAdd) {
+        if (isAdd) {
+            redisService.setCacheSet(INDEX_AUTH_GROUP_CODE + entity.getAuthGroupCode(), Set.of(hashKey));
+            redisService.setCacheSet(INDEX_AUTH_GROUP_NAME + entity.getAuthGroupName(), Set.of(hashKey));
+            redisService.setCacheSet(INDEX_IS_INDEPENDENT + entity.getIsIndependent(), Set.of(hashKey));
+        } else {
+            redisService.getCacheSet(INDEX_AUTH_GROUP_CODE + entity.getAuthGroupCode()).remove(hashKey);
+            redisService.getCacheSet(INDEX_AUTH_GROUP_NAME + entity.getAuthGroupName()).remove(hashKey);
+            redisService.getCacheSet(INDEX_IS_INDEPENDENT + entity.getIsIndependent()).remove(hashKey);
+        }
+    }
+
+    // 数据转换与清洗
+    private RdsRoleGroup convertToVo(Map<String, String> dataMap) {
+        if (dataMap == null) return null;
+
+        dataMap.replaceAll((k, v) -> "null".equalsIgnoreCase(v) ? null : v);
+        dataMap.values().removeIf(StrUtil::isBlank);
+
+        return BeanUtil.mapToBean(dataMap, RdsRoleGroup.class, false,
+                CopyOptions.create()
+                        .ignoreNullValue()
+                        .setFieldValueEditor((k, v) -> "null".equals(v) ? null : v));
+    }
+
+    private void update(RdsRoleGroupDto param) {
+        String hashKey = RDSROLEGROUP + param.getId();
+        Map<String, String> oldData = redisService.getCacheMap(hashKey);
+
+        // 删除旧索引
+        RdsRoleGroup oldEntity = convertToVo(oldData);
+        updateIndexes(hashKey, oldEntity, false);
+
+        // 更新主数据
+        RdsRoleGroup entity = BeanUtil.mapToBean(oldData, RdsRoleGroup.class, false);
+        BeanUtil.copyProperties(param, entity, CopyOptions.create().ignoreNullValue());
+        ModelUtil.fillUpdateFields(entity);
+
+        Map<String, String> safeMap = BeanUtil.beanToMap(entity)
+                .entrySet().stream()
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        e -> String.valueOf(e.getValue())
+                ));
+        redisService.setCacheMap(hashKey, safeMap);
+
+        // 添加新索引
+        updateIndexes(hashKey, entity, true);
+    }
+}

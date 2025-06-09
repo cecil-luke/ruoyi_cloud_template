@@ -1,0 +1,3 @@
+com\szmtr\common\swagger\config\properties\SpringDocProperties.class
+com\szmtr\common\swagger\config\properties\SpringDocProperties$InfoProperties.class
+com\szmtr\common\swagger\config\SpringDocAutoConfiguration.class

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>szmtr-common</artifactId>
+        <groupId>com.szmtr</groupId>
+        <version>3.6.5</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <version>3.6.5</version>
+    <artifactId>szmtr-common-log</artifactId>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+    <description>
+        日志记录
+    </description>
+
+    <dependencies>
+
+        <!-- szmtr Common Security -->
+        <dependency>
+            <groupId>com.szmtr</groupId>
+            <artifactId>szmtr-common-security</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

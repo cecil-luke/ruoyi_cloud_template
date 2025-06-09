@@ -1,0 +1,87 @@
+package com.szmtr.business.domain.convert;
+
+import com.szmtr.business.domain.Rdsapps;
+import com.szmtr.business.dto.RdsappsDto;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.processing.Generated;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-05-22T11:46:56+0800",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.15 (Microsoft)"
+)
+public class RdsappsModelConvertImpl implements RdsappsModelConvert {
+
+    @Override
+    public RdsappsDto fromModel(Rdsapps arg0) {
+        if ( arg0 == null ) {
+            return null;
+        }
+
+        RdsappsDto rdsappsDto = new RdsappsDto();
+
+        rdsappsDto.setId( arg0.getId() );
+        rdsappsDto.setRdsapp( arg0.getRdsapp() );
+        rdsappsDto.setRdsappname( arg0.getRdsappname() );
+        rdsappsDto.setRdsseqnum( arg0.getRdsseqnum() );
+        rdsappsDto.setRdsmodule( arg0.getRdsmodule() );
+        rdsappsDto.setDelFlag( arg0.getDelFlag() );
+        rdsappsDto.setCreateBy( arg0.getCreateBy() );
+        rdsappsDto.setCreateTime( arg0.getCreateTime() );
+        rdsappsDto.setUpdateBy( arg0.getUpdateBy() );
+        rdsappsDto.setUpdateTime( arg0.getUpdateTime() );
+
+        return rdsappsDto;
+    }
+
+    @Override
+    public List<RdsappsDto> fromModelList(List<Rdsapps> arg0) {
+        if ( arg0 == null ) {
+            return null;
+        }
+
+        List<RdsappsDto> list = new ArrayList<RdsappsDto>( arg0.size() );
+        for ( Rdsapps rdsapps : arg0 ) {
+            list.add( fromModel( rdsapps ) );
+        }
+
+        return list;
+    }
+
+    @Override
+    public Rdsapps toModel(RdsappsDto arg0) {
+        if ( arg0 == null ) {
+            return null;
+        }
+
+        Rdsapps rdsapps = new Rdsapps();
+
+        rdsapps.setCreateBy( arg0.getCreateBy() );
+        rdsapps.setCreateTime( arg0.getCreateTime() );
+        rdsapps.setUpdateBy( arg0.getUpdateBy() );
+        rdsapps.setUpdateTime( arg0.getUpdateTime() );
+        rdsapps.setId( arg0.getId() );
+        rdsapps.setRdsapp( arg0.getRdsapp() );
+        rdsapps.setRdsappname( arg0.getRdsappname() );
+        rdsapps.setRdsseqnum( arg0.getRdsseqnum() );
+        rdsapps.setRdsmodule( arg0.getRdsmodule() );
+        rdsapps.setDelFlag( arg0.getDelFlag() );
+
+        return rdsapps;
+    }
+
+    @Override
+    public List<Rdsapps> toModelList(List<RdsappsDto> arg0) {
+        if ( arg0 == null ) {
+            return null;
+        }
+
+        List<Rdsapps> list = new ArrayList<Rdsapps>( arg0.size() );
+        for ( RdsappsDto rdsappsDto : arg0 ) {
+            list.add( toModel( rdsappsDto ) );
+        }
+
+        return list;
+    }
+}

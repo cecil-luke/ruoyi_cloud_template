@@ -1,0 +1,5 @@
+com.szmtr.common.security.config.WebMvcConfig
+com.szmtr.common.security.service.TokenService
+com.szmtr.common.security.aspect.PreAuthorizeAspect
+com.szmtr.common.security.aspect.InnerAuthAspect
+com.szmtr.common.security.handler.GlobalExceptionHandler

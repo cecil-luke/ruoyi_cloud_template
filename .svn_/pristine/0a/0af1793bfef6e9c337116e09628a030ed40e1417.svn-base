@@ -1,0 +1,24 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  # redis 配置
+  redis:
+    # 地址
+    host: 127.0.0.1
+    # 端口，默认为6379
+    port: 6379
+    # 数据库索引
+    database: 0
+    # 密码
+    password:
+    # 连接超时时间
+    timeout: 1000s
+    lettuce:
+      pool:
+      # 连接池中的最小空闲连接
+        min-idle: 0
+      # 连接池中的最大空闲连接
+        max-idle: 8
+      # 连接池的最大数据库连接数
+        max-active: 8
+

@@ -1,0 +1,14 @@
+springdoc:
+  info:
+    description: 系统模块接口文档
+    title: 系统模块  # 应用名称
+    version: 1.0.0  # 强制指定 OpenAPI 版本‌:ml-citation{ref="1,7" data="citationList"}
+  api-docs:
+    path: /v3/api-docs  # 若使用 OpenAPI 3.0，路径需与版本匹配‌:ml-citation{ref="7" data="citationList"}
+
+# 慢SQL日志配置
+logging:
+  level:
+    com.szmtr.system.mapper: debug  # 设置Mapper接口的日志级别
+    io:
+      seata: DEBUG

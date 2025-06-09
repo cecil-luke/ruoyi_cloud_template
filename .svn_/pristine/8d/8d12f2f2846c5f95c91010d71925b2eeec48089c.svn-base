@@ -1,0 +1,99 @@
+package com.szmtr.business.domain.convert;
+
+import com.szmtr.business.domain.Rdscodegroup;
+import com.szmtr.business.dto.RdscodegroupDto;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.processing.Generated;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-05-22T11:46:56+0800",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.15 (Microsoft)"
+)
+public class RdscodegroupModelConvertImpl implements RdscodegroupModelConvert {
+
+    @Override
+    public Rdscodegroup toEntity(RdscodegroupDto dto) {
+        if ( dto == null ) {
+            return null;
+        }
+
+        Rdscodegroup rdscodegroup = new Rdscodegroup();
+
+        rdscodegroup.setCreateBy( dto.getCreateBy() );
+        rdscodegroup.setCreateTime( dto.getCreateTime() );
+        rdscodegroup.setUpdateBy( dto.getUpdateBy() );
+        rdscodegroup.setUpdateTime( dto.getUpdateTime() );
+        rdscodegroup.setId( dto.getId() );
+        rdscodegroup.setRdsgrouprulenum( dto.getRdsgrouprulenum() );
+        rdscodegroup.setRdsgrouprulename( dto.getRdsgrouprulename() );
+        rdscodegroup.setRdsprefix( dto.getRdsprefix() );
+        rdscodegroup.setRdsversion( dto.getRdsversion() );
+        rdscodegroup.setRdsgroupstatus( dto.getRdsgroupstatus() );
+        rdscodegroup.setRdsspecnum( dto.getRdsspecnum() );
+        rdscodegroup.setRdscodetype( dto.getRdscodetype() );
+        rdscodegroup.setRdssectionnum( dto.getRdssectionnum() );
+        rdscodegroup.setRdscodedetail( dto.getRdscodedetail() );
+        rdscodegroup.setRdscreatedate( dto.getRdscreatedate() );
+        rdscodegroup.setRdssectionformat( dto.getRdssectionformat() );
+
+        return rdscodegroup;
+    }
+
+    @Override
+    public RdscodegroupDto toDTO(Rdscodegroup entity) {
+        if ( entity == null ) {
+            return null;
+        }
+
+        RdscodegroupDto rdscodegroupDto = new RdscodegroupDto();
+
+        rdscodegroupDto.setId( entity.getId() );
+        rdscodegroupDto.setCreateTime( entity.getCreateTime() );
+        rdscodegroupDto.setCreateBy( entity.getCreateBy() );
+        rdscodegroupDto.setUpdateTime( entity.getUpdateTime() );
+        rdscodegroupDto.setUpdateBy( entity.getUpdateBy() );
+        rdscodegroupDto.setRdsgrouprulenum( entity.getRdsgrouprulenum() );
+        rdscodegroupDto.setRdsgrouprulename( entity.getRdsgrouprulename() );
+        rdscodegroupDto.setRdsprefix( entity.getRdsprefix() );
+        rdscodegroupDto.setRdsversion( entity.getRdsversion() );
+        rdscodegroupDto.setRdsgroupstatus( entity.getRdsgroupstatus() );
+        rdscodegroupDto.setRdsspecnum( entity.getRdsspecnum() );
+        rdscodegroupDto.setRdscodetype( entity.getRdscodetype() );
+        rdscodegroupDto.setRdssectionnum( entity.getRdssectionnum() );
+        rdscodegroupDto.setRdscodedetail( entity.getRdscodedetail() );
+        rdscodegroupDto.setRdscreatedate( entity.getRdscreatedate() );
+        rdscodegroupDto.setRdssectionformat( entity.getRdssectionformat() );
+
+        return rdscodegroupDto;
+    }
+
+    @Override
+    public List<Rdscodegroup> toEntityList(List<RdscodegroupDto> dtos) {
+        if ( dtos == null ) {
+            return null;
+        }
+
+        List<Rdscodegroup> list = new ArrayList<Rdscodegroup>( dtos.size() );
+        for ( RdscodegroupDto rdscodegroupDto : dtos ) {
+            list.add( toEntity( rdscodegroupDto ) );
+        }
+
+        return list;
+    }
+
+    @Override
+    public List<RdscodegroupDto> toDTOList(List<Rdscodegroup> entities) {
+        if ( entities == null ) {
+            return null;
+        }
+
+        List<RdscodegroupDto> list = new ArrayList<RdscodegroupDto>( entities.size() );
+        for ( Rdscodegroup rdscodegroup : entities ) {
+            list.add( toDTO( rdscodegroup ) );
+        }
+
+        return list;
+    }
+}

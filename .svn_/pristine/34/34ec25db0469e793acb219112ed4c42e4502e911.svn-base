@@ -1,0 +1,75 @@
+package com.szmtr.business.domain.convert;
+
+import com.szmtr.business.domain.Rdsappsoption;
+import com.szmtr.business.dto.RdsappsoptionDto;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.processing.Generated;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-05-22T11:46:56+0800",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.15 (Microsoft)"
+)
+public class RdsappsoptionModelConvertImpl implements RdsappsoptionModelConvert {
+
+    @Override
+    public Rdsappsoption toEntity(RdsappsoptionDto dto) {
+        if ( dto == null ) {
+            return null;
+        }
+
+        Rdsappsoption rdsappsoption = new Rdsappsoption();
+
+        rdsappsoption.setCreateBy( dto.getCreateBy() );
+        rdsappsoption.setCreateTime( dto.getCreateTime() );
+        rdsappsoption.setUpdateBy( dto.getUpdateBy() );
+        rdsappsoption.setUpdateTime( dto.getUpdateTime() );
+
+        return rdsappsoption;
+    }
+
+    @Override
+    public RdsappsoptionDto toDTO(Rdsappsoption entity) {
+        if ( entity == null ) {
+            return null;
+        }
+
+        RdsappsoptionDto rdsappsoptionDto = new RdsappsoptionDto();
+
+        rdsappsoptionDto.setCreateTime( entity.getCreateTime() );
+        rdsappsoptionDto.setCreateBy( entity.getCreateBy() );
+        rdsappsoptionDto.setUpdateTime( entity.getUpdateTime() );
+        rdsappsoptionDto.setUpdateBy( entity.getUpdateBy() );
+
+        return rdsappsoptionDto;
+    }
+
+    @Override
+    public List<Rdsappsoption> toEntityList(List<RdsappsoptionDto> dtos) {
+        if ( dtos == null ) {
+            return null;
+        }
+
+        List<Rdsappsoption> list = new ArrayList<Rdsappsoption>( dtos.size() );
+        for ( RdsappsoptionDto rdsappsoptionDto : dtos ) {
+            list.add( toEntity( rdsappsoptionDto ) );
+        }
+
+        return list;
+    }
+
+    @Override
+    public List<RdsappsoptionDto> toDTOList(List<Rdsappsoption> entities) {
+        if ( entities == null ) {
+            return null;
+        }
+
+        List<RdsappsoptionDto> list = new ArrayList<RdsappsoptionDto>( entities.size() );
+        for ( Rdsappsoption rdsappsoption : entities ) {
+            list.add( toDTO( rdsappsoption ) );
+        }
+
+        return list;
+    }
+}

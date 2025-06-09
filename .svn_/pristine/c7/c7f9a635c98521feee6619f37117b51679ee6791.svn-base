@@ -1,0 +1,3 @@
+com.szmtr.system.api.factory.RemoteUserFallbackFactory
+com.szmtr.system.api.factory.RemoteLogFallbackFactory
+com.szmtr.system.api.factory.RemoteFileFallbackFactory

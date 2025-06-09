@@ -1,0 +1,47 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mysql://192.168.1.55:3306/szmtr_cloud?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # redis 配置
+  redis:
+    # 地址
+    host: 127.0.0.1
+    # 端口，默认为6379
+    port: 6379
+    # 数据库索引
+    database: 0
+    # 密码
+    password:
+    # 连接超时时间
+    timeout: 100s
+    lettuce:
+      pool:
+        # 连接池中的最小空闲连接
+        min-idle: 0
+        # 连接池中的最大空闲连接
+        max-idle: 8
+        # 连接池的最大数据库连接数
+        max-active: 8
+
+mybatis:
+  mapper-locations: classpath*:com/szmtr/*/mapper/*.xml  # 根据实际路径调整
+  type-aliases-package: com.szmtr.*.domain  # 修正拼写错误并指定具体包
+  configuration:
+    map-underscore-to-camel-case: true  # 下划线转驼峰
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 修正日志实现类名
+    cache-enabled: true
+# 慢SQL日志配置
+logging:
+  level:
+    com.szmtr.system.mapper: debug  # 设置Mapper接口的日志级别
+
+# ruoyi-generator/src/main/resources/generator.yml
+gen:
+  author: 严欢      # 生成代码作者署名‌:ml-citation{ref="1,7" data="citationList"}
+  packageName: com.szmtr.system  # 生成代码的包路径
+  autoRemovePre: false   # 自动去除表前缀（如 sys_user → User）
+

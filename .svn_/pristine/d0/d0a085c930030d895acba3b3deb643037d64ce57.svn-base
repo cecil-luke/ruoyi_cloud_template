@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>szmtr-common</artifactId>
+        <groupId>com.szmtr</groupId>
+        <version>3.6.5</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <description>
+        安全模块
+    </description>
+    <artifactId>szmtr-common-security</artifactId>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+    <dependencies>
+
+        <!-- Spring Web -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+        <!-- szmtr Api System -->
+        <dependency>
+            <groupId>com.szmtr</groupId>
+            <artifactId>szmtr-api-system</artifactId>
+        </dependency>
+
+        <!-- szmtr Common Redis-->
+        <dependency>
+            <groupId>com.szmtr</groupId>
+            <artifactId>szmtr-common-redis</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

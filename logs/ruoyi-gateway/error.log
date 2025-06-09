@@ -1,0 +1,3 @@
+11:07:46.745 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/menu/getRouters,异常信息:404 NOT_FOUND
+14:46:11.096 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/rds-user-role/auth-user,异常信息:404 NOT_FOUND
+14:56:05.661 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/rds-user-role/auth-role-group,异常信息:404 NOT_FOUND

@@ -1,0 +1,68 @@
+package com.szmtr.system.dto;
+
+import com.szmtr.system.dto.query.RdsAppsMenuQuery;
+import lombok.Data;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import java.util.List;
+
+/**
+ * @ClassName RdsappsDto
+ * @Author Lss
+ * @Date 2025/5/21
+ * @Description: RdsappsDto
+ */
+@Data
+public class RdsappsDto {
+
+    /** 主键ID */
+    private String id;
+
+    /** 菜单名称 */
+    @NotBlank(message = "菜单名称不能为空!")
+    private String rdsAppName;
+
+    /** 菜单编码 */
+    @NotBlank(message = "菜单编码不能为空!")
+    private String rdsApp;
+
+    /** 是否启用（0正常 1停用） */
+    private Integer status;
+
+    /** 权限标识码 */
+    @NotBlank(message = "权限标识码不能为空!")
+    private String perms;
+
+    /** RDS模块-所属模块 */
+    private String rdsModule;
+
+    /** 备注 */
+    private String remark;
+
+    /** 菜单类型（M目录 C页面） */
+    @NotBlank(message = "菜单类型不能为空!")
+    private String menuType;
+
+    /** 菜单路径 */
+    @NotBlank(message = "菜单路径不能为空!")
+    private String path;
+
+    /** 显示顺序 */
+    private Integer rdsSeqNum;
+
+    /** 上级菜单 */
+    private Long parentId;
+
+    /** 菜单图标 */
+    private String icon;
+
+    /** 是否显示（0显示 1隐藏） */
+    private String visible;
+
+    /**
+     * 功能按钮列表
+     */
+    @Valid
+    private List<RdsAppsMenuQuery> menuList;
+}

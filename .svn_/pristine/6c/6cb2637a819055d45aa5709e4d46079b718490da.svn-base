@@ -1,0 +1,221 @@
+package com.szmtr.system.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.szmtr.system.api.model.LoginUser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.szmtr.common.core.constant.UserConstants;
+import com.szmtr.common.core.utils.StringUtils;
+import com.szmtr.common.core.web.controller.BaseController;
+import com.szmtr.common.core.web.domain.AjaxResult;
+import com.szmtr.common.log.annotation.Log;
+import com.szmtr.common.log.enums.BusinessType;
+import com.szmtr.common.security.annotation.RequiresPermissions;
+import com.szmtr.common.security.utils.SecurityUtils;
+import com.szmtr.system.domain.SysMenu;
+import com.szmtr.system.service.ISysMenuService;
+
+/**
+ * 菜单信息
+ *
+ * @author szmtr
+ */
+@RestController
+@RequestMapping("/menu")
+public class SysMenuController extends BaseController {
+    @Autowired
+    private ISysMenuService menuService;
+//
+//    /**
+//     * 获取菜单列表
+//     */
+//    @RequiresPermissions("system:menu:list")
+//    @GetMapping("/list")
+//    public AjaxResult list(SysMenu menu) {
+//        Long userId = SecurityUtils.getLoginUser().getUserid();
+//        List<SysMenu> menus = menuService.selectMenuList(menu, userId);
+//        return success(menus);
+//    }
+//
+//    /**
+//     * 根据菜单编号获取详细信息
+//     */
+//    @RequiresPermissions("system:menu:query")
+//    @GetMapping(value = "/{menuId}")
+//    public AjaxResult getInfo(@PathVariable Long menuId) {
+//        return success(menuService.selectMenuById(menuId));
+//    }
+//
+//    /**
+//     * 获取菜单下拉树列表
+//     */
+//    @GetMapping("/treeselect")
+//    public AjaxResult treeselect(SysMenu menu) {
+//        Long userId = SecurityUtils.getLoginUser().getUserid();
+//        List<SysMenu> menus = menuService.selectMenuList(menu, userId);
+//        return success(menuService.buildMenuTreeSelect(menus));
+//    }
+
+//    /**
+//     * 加载对应角色菜单列表树
+//     */
+//    @GetMapping(value = "/roleMenuTreeselect/{roleId}")
+//    public AjaxResult roleMenuTreeselect(@PathVariable("roleId") Long roleId) {
+//        Long userId = SecurityUtils.getLoginUser().getUserid();
+//        List<SysMenu> menus = menuService.selectMenuList(userId);
+//        AjaxResult ajax = AjaxResult.success();
+//        ajax.put("checkedKeys", menuService.selectMenuListByRoleId(roleId));
+//        ajax.put("menus", menuService.buildMenuTreeSelect(menus));
+//        return ajax;
+//    }
+//
+////    /**
+////     * 新增菜单
+////     */
+////    @RequiresPermissions("system:menu:add")
+////    @Log(title = "菜单管理", businessType = BusinessType.INSERT)
+////    @PostMapping
+////    public AjaxResult add(@Validated @RequestBody SysMenu menu) {
+////        if (!menuService.checkMenuNameUnique(menu)) {
+////            return error("新增菜单'" + menu.getMenuName() + "'失败，菜单名称已存在");
+////        } else if (UserConstants.YES_FRAME.equals(menu.getIsFrame()) && !StringUtils.ishttp(menu.getPath())) {
+////            return error("新增菜单'" + menu.getMenuName() + "'失败，地址必须以http(s)://开头");
+////        }
+////        menu.setCreateBy(SecurityUtils.getUsername());
+////        return toAjax(menuService.insertMenu(menu));
+////    }
+////
+//////    /**
+//////     * 修改菜单
+//////     */
+//////    @RequiresPermissions("system:menu:edit")
+//////    @Log(title = "菜单管理", businessType = BusinessType.UPDATE)
+//////    @PutMapping
+//////    public AjaxResult edit(@Validated @RequestBody SysMenu menu) {
+//////        if (!menuService.checkMenuNameUnique(menu)) {
+//////            return error("修改菜单'" + menu.getMenuName() + "'失败，菜单名称已存在");
+//////        } else if (UserConstants.YES_FRAME.equals(menu.getIsFrame()) && !StringUtils.ishttp(menu.getPath())) {
+//////            return error("修改菜单'" + menu.getMenuName() + "'失败，地址必须以http(s)://开头");
+//////        } else if (menu.getMenuId().equals(menu.getParentId())) {
+//////            return error("修改菜单'" + menu.getMenuName() + "'失败，上级菜单不能选择自己");
+//////        }
+//////        menu.setUpdateBy(SecurityUtils.getUsername());
+//////        return toAjax(menuService.updateMenu(menu));
+//////    }
+
+//    /**
+//     * 删除菜单
+//     */
+//    @RequiresPermissions("system:menu:remove")
+//    @Log(title = "菜单管理", businessType = BusinessType.DELETE)
+//    @DeleteMapping("/{menuId}")
+//    public AjaxResult remove(@PathVariable("menuId") Long menuId) {
+//        if (menuService.hasChildByMenuId(menuId)) {
+//            return warn("存在子菜单,不允许删除");
+//        }
+//        if (menuService.checkMenuExistRole(menuId)) {
+//            return warn("菜单已分配,不允许删除");
+//        }
+//        return toAjax(menuService.deleteMenuById(menuId));
+//    }
+
+    /**
+     * 获取路由信息
+     *
+     * @return 路由信息
+     */
+    @GetMapping("getRouters")
+    public AjaxResult getRouters() {
+        List<SysMenu> menus = new ArrayList<>();//menuService.selectMenuTreeByUserId(uId);
+        //系统管理
+        SysMenu sysManagerMenu = new SysMenu();
+        sysManagerMenu.setMenuId(1L);
+        sysManagerMenu.setMenuName("系统管理");
+        sysManagerMenu.setParentId(0l);
+        sysManagerMenu.setOrderNum(1);
+        sysManagerMenu.setPath("system");
+        sysManagerMenu.setIsFrame("1");
+        sysManagerMenu.setIsCache("0");
+        sysManagerMenu.setMenuType("M");
+        sysManagerMenu.setVisible("0");
+        sysManagerMenu.setStatus("0");
+        sysManagerMenu.setIcon("system");
+        menus.add(sysManagerMenu);
+        //编码体系
+        SysMenu codeSystem = new SysMenu();
+        codeSystem.setMenuId(2004L);
+        codeSystem.setMenuName("编码体系");
+        codeSystem.setParentId(0l);
+        codeSystem.setOrderNum(1);
+        codeSystem.setPath("codeSystem");
+        codeSystem.setIsFrame("1");
+        codeSystem.setIsCache("0");
+        codeSystem.setMenuType("M");
+        codeSystem.setVisible("0");
+        codeSystem.setStatus("0");
+        codeSystem.setIcon("cascader");
+        menus.add(codeSystem);
+
+//        授权管理
+        SysMenu authMenu = new SysMenu();
+        authMenu.setMenuId(101L);
+        authMenu.setMenuName("权限组定义");
+        authMenu.setParentId(1l);
+        authMenu.setOrderNum(1);
+        authMenu.setComponent("system/role/index");
+        authMenu.setMenuType("C");
+        authMenu.setPath("role");
+        authMenu.setIsFrame("1");
+        authMenu.setIsCache("0");
+        authMenu.setMenuType("C");
+        authMenu.setVisible("0");
+        authMenu.setStatus("0");
+        authMenu.setIcon("peoples");
+        menus.add(authMenu);
+        //菜单管理
+        SysMenu menu = new SysMenu();
+        menu.setMenuId(102L);
+        menu.setMenuName("菜单定义");
+        menu.setParentId(1l);
+        menu.setOrderNum(3);
+        menu.setComponent("system/menu/index");
+        menu.setMenuType("C");
+        menu.setPath("menu");
+        menu.setIsFrame("1");
+        menu.setIsCache("0");
+        menu.setMenuType("C");
+        menu.setVisible("0");
+        menu.setStatus("0");
+        menu.setIcon("peoples");
+        menus.add(menu);
+        //编码体系管理
+        SysMenu codeSystemManager = new SysMenu();
+        codeSystemManager.setMenuId(2005L);
+        codeSystemManager.setMenuName("编码体系");
+        codeSystemManager.setParentId(2004l);
+        codeSystemManager.setOrderNum(3);
+        codeSystemManager.setComponent("business/rdscodetype/index");
+        codeSystemManager.setMenuType("C");
+        codeSystemManager.setPath("codeSystem");
+        codeSystemManager.setIsFrame("1");
+        codeSystemManager.setIsCache("0");
+        codeSystemManager.setMenuType("C");
+        codeSystemManager.setVisible("0");
+        codeSystemManager.setStatus("0");
+        codeSystemManager.setIcon("code");
+        codeSystemManager.setRouteName("编码体系");
+        menus.add(codeSystemManager);
+        List<SysMenu> menusList = menuService.selectMenuTreeByUserId(menus);
+        return success(menuService.buildMenus(menusList));
+    }
+}

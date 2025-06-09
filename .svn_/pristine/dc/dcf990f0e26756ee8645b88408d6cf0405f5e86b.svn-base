@@ -1,0 +1,95 @@
+package com.szmtr.business.domain.convert;
+
+import com.szmtr.business.domain.Rdssection;
+import com.szmtr.business.dto.RdssectionDto;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.processing.Generated;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-05-22T11:46:56+0800",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.15 (Microsoft)"
+)
+public class RdssectionModelConvertImpl implements RdssectionModelConvert {
+
+    @Override
+    public Rdssection toEntity(RdssectionDto dto) {
+        if ( dto == null ) {
+            return null;
+        }
+
+        Rdssection rdssection = new Rdssection();
+
+        rdssection.setCreateBy( dto.getCreateBy() );
+        rdssection.setCreateTime( dto.getCreateTime() );
+        rdssection.setId( dto.getId() );
+        rdssection.setRdsprefix( dto.getRdsprefix() );
+        rdssection.setRdssectioncode( dto.getRdssectioncode() );
+        rdssection.setRdssectionname( dto.getRdssectionname() );
+        rdssection.setRdssectionlength( dto.getRdssectionlength() );
+        rdssection.setRdsdatatype( dto.getRdsdatatype() );
+        rdssection.setRdscodetype( dto.getRdscodetype() );
+        rdssection.setRdsvaluelist( dto.getRdsvaluelist() );
+        rdssection.setStatus( dto.getStatus() );
+        rdssection.setRdssectionformat( dto.getRdssectionformat() );
+        rdssection.setRdscodedetail( dto.getRdscodedetail() );
+        rdssection.setRdssectionnum( dto.getRdssectionnum() );
+
+        return rdssection;
+    }
+
+    @Override
+    public RdssectionDto toDTO(Rdssection entity) {
+        if ( entity == null ) {
+            return null;
+        }
+
+        RdssectionDto rdssectionDto = new RdssectionDto();
+
+        rdssectionDto.setId( entity.getId() );
+        rdssectionDto.setCreateTime( entity.getCreateTime() );
+        rdssectionDto.setCreateBy( entity.getCreateBy() );
+        rdssectionDto.setRdsprefix( entity.getRdsprefix() );
+        rdssectionDto.setRdssectioncode( entity.getRdssectioncode() );
+        rdssectionDto.setRdssectionname( entity.getRdssectionname() );
+        rdssectionDto.setRdssectionlength( entity.getRdssectionlength() );
+        rdssectionDto.setRdsdatatype( entity.getRdsdatatype() );
+        rdssectionDto.setRdscodetype( entity.getRdscodetype() );
+        rdssectionDto.setRdsvaluelist( entity.getRdsvaluelist() );
+        rdssectionDto.setStatus( entity.getStatus() );
+        rdssectionDto.setRdssectionformat( entity.getRdssectionformat() );
+        rdssectionDto.setRdscodedetail( entity.getRdscodedetail() );
+        rdssectionDto.setRdssectionnum( entity.getRdssectionnum() );
+
+        return rdssectionDto;
+    }
+
+    @Override
+    public List<Rdssection> toEntityList(List<RdssectionDto> dtos) {
+        if ( dtos == null ) {
+            return null;
+        }
+
+        List<Rdssection> list = new ArrayList<Rdssection>( dtos.size() );
+        for ( RdssectionDto rdssectionDto : dtos ) {
+            list.add( toEntity( rdssectionDto ) );
+        }
+
+        return list;
+    }
+
+    @Override
+    public List<RdssectionDto> toDTOList(List<Rdssection> entities) {
+        if ( entities == null ) {
+            return null;
+        }
+
+        List<RdssectionDto> list = new ArrayList<RdssectionDto>( entities.size() );
+        for ( Rdssection rdssection : entities ) {
+            list.add( toDTO( rdssection ) );
+        }
+
+        return list;
+    }
+}

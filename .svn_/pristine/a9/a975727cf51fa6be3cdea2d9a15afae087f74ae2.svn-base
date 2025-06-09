@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="27ae7005-3422-4d33-be49-bb075703dff5" name="Changes" comment="RDS权限组/用户组">
+      <change afterPath="$PROJECT_DIR$/.idea" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ApifoxUploaderProjectSetting.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/pagehelper_spring_boot_starter_2_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/spring_boot_devtools_2_7_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/tomcat_embed_core_9_0_68.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Servers" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/Servers/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Servers/.settings" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/Servers/.settings/org.eclipse.wst.server.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Servers/MyEclipse Tomcat v8.5-config" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/Servers/MyEclipse Tomcat v8.5-config/catalina.policy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Servers/MyEclipse Tomcat v8.5-config/catalina.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Servers/MyEclipse Tomcat v8.5-config/context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Servers/MyEclipse Tomcat v8.5-config/server.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Servers/MyEclipse Tomcat v8.5-config/tomcat-users.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Servers/MyEclipse Tomcat v8.5-config/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-auth" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-auth/error.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-auth/info.2025-05-21.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-auth/info.2025-05-22.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-auth/info.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-file" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-file/error.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-file/info.2025-05-21.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-file/info.2025-05-22.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-file/info.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-gateway" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-gateway/error.2025-05-21.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-gateway/error.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-gateway/info.2025-05-21.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-gateway/info.2025-05-22.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-gateway/info.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-gen" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-gen/error.2025-05-21.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-gen/error.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-gen/info.2025-05-21.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-gen/info.2025-05-22.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ruoyi-gen/info.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/szmtr-system" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/logs/szmtr-system/error.2025-05-21.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/szmtr-system/error.2025-05-22.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/szmtr-system/error.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/szmtr-system/info.2025-05-21.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/szmtr-system/info.2025-05-22.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/szmtr-system/info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/szmtr-api" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/szmtr-auth" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/szmtr-common" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/szmtr-gateway" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/szmtr-modules" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/szmtr-visual" beforeDir="true" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="module" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="C:\lu\app\maven\apache-maven-3.9.9" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="userSettingsFile" value="C:\lu\app\maven\apache-maven-3.9.9\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2xLnTY44eFLgNuxkyulfNRgPEbx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0": "0",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1": "1",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2": "2",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3": "3",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4": "4",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder5": "5",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0": "113",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1": "113",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2": "113",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3": "112",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4": "113",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth5": "112",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0": "0",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1": "1",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2": "2",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3": "3",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4": "4",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder5": "5",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0": "113",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1": "113",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2": "113",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3": "112",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4": "113",
+    "FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth5": "112",
+    "Maven.szmtr_cloud [clean].executor": "Run",
+    "Maven.szmtr_cloud [compile].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.SzmtrAuthApplication.executor": "Debug",
+    "Spring Boot.SzmtrFileApplication.executor": "Debug",
+    "Spring Boot.SzmtrGatewayApplication.executor": "Debug",
+    "Spring Boot.SzmtrGenApplication.executor": "Debug",
+    "Spring Boot.SzmtrSystemApplication.executor": "Debug",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/lu/RDS/projects/code/szmtr_v1/szmtr",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3229885",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "vcs.Subversion",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SzmtrAuthApplication">
+    <configuration name="SzmtrAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="szmtr-auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.szmtr.auth.SzmtrAuthApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SzmtrFileApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="szmtr-file" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.szmtr.file.SzmtrFileApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SzmtrGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="szmtr-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.szmtr.gateway.SzmtrGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SzmtrGenApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="szmtr-gen" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.szmtr.gen.SzmtrGenApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SzmtrSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="szmtr-system" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.szmtr.SzmtrSystemApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.19416.15" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.19416.15" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\lu\RDS\projects\code\szmtr_v1\szmtr" />
+          <option name="myCopyRoot" value="C:\lu\RDS\projects\code\szmtr_v1\szmtr" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\lu\RDS\projects\code\szmtr_v1\szmtr" />
+          <option name="myCopyRoot" value="C:\lu\RDS\projects\code\szmtr_v1\szmtr" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="27ae7005-3422-4d33-be49-bb075703dff5" name="Changes" comment="" />
+      <created>1747726232076</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747726232076</updated>
+      <workItem from="1747726234678" duration="8174000" />
+      <workItem from="1747790100126" duration="27826000" />
+      <workItem from="1747876280494" duration="11470000" />
+      <workItem from="1747893507266" duration="93000" />
+      <workItem from="1747991176617" duration="1843000" />
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <option name="closed" value="true" />
+      <created>1747726976774</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747726976774</updated>
+    </task>
+    <task id="LOCAL-00002" summary="RDS应用定义-菜单定义">
+      <option name="closed" value="true" />
+      <created>1747822133384</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747822133384</updated>
+    </task>
+    <task id="LOCAL-00003" summary="RDS权限组/用户组">
+      <option name="closed" value="true" />
+      <created>1747891987644</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747891987644</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <MESSAGE value="RDS应用定义-菜单定义" />
+    <MESSAGE value="RDS权限组/用户组" />
+    <option name="LAST_COMMIT_MESSAGE" value="RDS权限组/用户组" />
+  </component>
+</project>

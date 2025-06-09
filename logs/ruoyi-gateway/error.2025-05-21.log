@@ -1,0 +1,16 @@
+11:58:45.618 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/rds-menu,异常信息:404 NOT_FOUND
+11:58:55.083 [reactor-http-nio-2] ERROR c.s.g.f.AuthFilter - [unauthorizedResponse,96] - [鉴权异常处理]请求路径:/system/rds-menu,错误信息:令牌不能为空
+14:54:21.105 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/rds-menu/page,异常信息:404 NOT_FOUND
+14:54:57.493 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/rds-menu/page,异常信息:404 NOT_FOUND
+14:55:13.036 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/rds-menu/page,异常信息:Unable to read JSON value: i����G�{"alg":"HS512"}
+14:55:36.459 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/rds-menu/page,异常信息:Unable to read JSON value: i����G�{"alg":"HS512"}
+14:56:49.280 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/rds-menu/page,异常信息:Unable to read JSON value: i����G�{"alg":"HS512"}
+15:00:33.235 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/rds-menu/page,异常信息:Unable to read JSON value: i����G�{"alg":"HS512"}
+15:01:03.927 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/rds-menu/page,异常信息:Unable to read JSON value: i����G�{"alg":"HS512"}
+15:01:31.326 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/rds-menu/page,异常信息:Unable to read JSON value: i����G�{"alg":"HS512"}
+15:03:24.171 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/rds-menu/page,异常信息:Unable to read JSON value: i����G�{"alg":"HS512"}
+15:12:41.208 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/rds-menu,异常信息:404 NOT_FOUND
+15:13:05.321 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/rds-menu,异常信息:404 NOT_FOUND
+15:14:03.803 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/rds-menu,异常信息:404 NOT_FOUND
+15:14:11.873 [reactor-http-nio-2] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/rds-menu,异常信息:404 NOT_FOUND
+17:47:03.125 [boundedElastic-1] ERROR c.s.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/rds-menu,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for szmtr-system"

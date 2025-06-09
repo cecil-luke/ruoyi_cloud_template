@@ -1,0 +1,90 @@
+package com.szmtr.system.controller;
+
+import com.szmtr.common.core.domain.R;
+import com.szmtr.common.core.domain.Result;
+import com.szmtr.system.domain.PageResults;
+import com.szmtr.system.domain.Rdsapps;
+import com.szmtr.system.domain.vo.RdsappsVo;
+import com.szmtr.system.dto.RdsappsDto;
+import com.szmtr.system.dto.query.RdsappsQuery;
+import com.szmtr.system.service.IRdsappsService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import java.util.List;
+
+/**
+ * @ClassName RdsappsController
+ * @Author Lss
+ * @Date 2025/5/20
+ * @Description: RDS应用定义
+ */
+@RestController
+@RequestMapping("/rds-menu")
+@RequiredArgsConstructor
+@Validated
+public class RdsappsController {
+
+    final IRdsappsService rdsappsService;
+
+    /**
+     * 新增或更新RDS应用定义(菜单定义)
+     *
+     * @param param dto
+     * @return R
+     */
+    @PostMapping
+    public R addOrUpdate(@RequestBody @Valid RdsappsDto param) {
+        rdsappsService.addOrUpdate(param);
+        return R.ok();
+    }
+
+    /**
+     * 删除RDS应用定义(菜单定义)
+     *
+     * @param id id
+     * @return R
+     */
+    @DeleteMapping
+    public R delete(@RequestParam("id") @NotBlank String id) {
+        rdsappsService.deleteById(id);
+        return R.ok();
+    }
+
+    /**
+     *  分页查询RDS应用定义(菜单定义)
+     *
+     * @param param param
+     * @return PageResults
+     */
+    @PostMapping("/page")
+    public R page(@RequestBody @Valid RdsappsQuery param) {
+        PageResults<Rdsapps> page = rdsappsService.page(param);
+        return R.ok(page);
+    }
+
+    /**
+     * 根据id查询RDS应用定义
+     */
+    @GetMapping("/{id}")
+    public R getById(@PathVariable("id") @NotBlank String id) {
+        Rdsapps rdsapps = rdsappsService.getById(id);
+        return R.ok(rdsapps);
+    }
+
+    /**
+     * 根据菜单类型查找RDS应用定义
+     *
+     * @param menutype 菜单类型
+     * @return R
+     */
+    @GetMapping("/menu/{menutype}")
+    public Result getByMenuType(@PathVariable("menutype") @NotBlank String menutype) {
+        List<RdsappsVo> voList = rdsappsService.getByMenuType(menutype);
+        return Result.ok(voList);
+    }
+
+}

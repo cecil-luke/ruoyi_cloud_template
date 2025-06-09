@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="szmtr-common-sensitive" />
+        <module name="szmtr-common-swagger" />
+        <module name="szmtr-api-system" />
+        <module name="szmtr-gen" />
+        <module name="szmtr-file" />
+        <module name="szmtr-common-redis" />
+        <module name="szmtr-common-datasource" />
+        <module name="szmtr-auth" />
+        <module name="szmtr-gateway" />
+        <module name="szmtr-common-security" />
+        <module name="szmtr-visual-monitor" />
+        <module name="szmtr-common-seata" />
+        <module name="szmtr-system" />
+        <module name="szmtr-common-core" />
+        <module name="szmtr-common-log" />
+        <module name="szmtr-job" />
+        <module name="szmtr-common-datascope" />
+        <module name="szmtr-common-rabbitmq" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="17" />
+  </component>
+</project>

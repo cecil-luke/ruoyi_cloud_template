@@ -1,0 +1,2 @@
+com.szmtr.common.redis.configure.RedisConfig
+com.szmtr.common.redis.service.RedisService

@@ -1,0 +1,47 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    gateway:
+      # 全局跨域配置（可选）
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            exposeHeaders: "Authorization"  # 关键：暴露 Authorization 头
+      default-filters:
+        - RemoveRequestHeader=Cookie,Set-Cookie  # 避免 Cookie 干扰
+        - AddRequestHeader=Authorization, @httpServletRequest.getHeader('Authorization')  # 显式传递头
+      # 静态路由定义
+      routes:
+        - id: file-route
+          uri: lb://szmtr-file  # 服务注册中心中的服务名
+          predicates:
+            - Path=/file/**
+          filters:
+            - StripPrefix=1  # 移除路径前缀
+        - id: system-route
+          uri: lb://szmtr-system  # 服务注册中心中的服务名
+          predicates:
+            - Path=/system/**,/szmtr-system/**,/business/**
+          filters:
+            - StripPrefix=1  # 移除路径前缀
+              # 关键：显式保留 Authorization 头
+        - id: auth-route
+          uri: lb://szmtr-auth
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1  # 移除路径前缀
+        - id: gen-route
+          uri: lb://szmtr-gen
+          predicates:
+            - Path=/code/**
+          filters:
+            - StripPrefix=1  # 移除路径前缀
+      ignored:
+        - /v2/api-docs
+        - /swagger-ui.html
+        - /webjars/**

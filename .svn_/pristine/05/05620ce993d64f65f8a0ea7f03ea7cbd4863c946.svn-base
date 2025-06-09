@@ -1,0 +1,23 @@
+package ${packageName}.service;
+
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.IService;
+import ${packageName}.domain.${ClassName};
+import ${packageName}.dto.*;
+import com.szmtr.common.core.web.domain.AjaxResult;
+import ${packageName}.dto.query.${ClassName}Query;
+import java.util.List;
+
+public interface I${ClassName}Service extends IService<${ClassName}> {
+
+    ## 分页查询
+    AjaxResult select${ClassName}Page(${ClassName}Query query);
+
+    ## 列表查询（用于导出）
+    List<${ClassName}> select${ClassName}List(${ClassName}Query query);
+
+
+    public void saveOrUpdate(${ClassName}Dto ${className}Dto);
+
+    public void deleteData(String ids);
+}

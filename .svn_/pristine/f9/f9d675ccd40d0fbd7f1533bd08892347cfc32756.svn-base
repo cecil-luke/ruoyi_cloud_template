@@ -1,0 +1,67 @@
+package ${packageName}.controller;
+
+import com.szmtr.common.core.web.controller.BaseController;
+import com.szmtr.common.core.web.domain.AjaxResult;
+import com.szmtr.common.core.web.page.TableDataInfo;
+import com.szmtr.common.log.annotation.Log;
+import com.szmtr.common.log.enums.BusinessType;
+import com.szmtr.common.security.annotation.RequiresPermissions;
+import ${packageName}.domain.${ClassName};
+import ${packageName}.dto.query.${ClassName}Query;
+import ${packageName}.service.I${ClassName}Service;
+import ${packageName}.dto.*;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
+
+@Validated
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/${businessName}")
+public class ${ClassName}Controller extends BaseController {
+
+    @Autowired
+    public I${ClassName}Service ${className}Service;
+
+    ## 分页查询接口
+    @PostMapping("/list")
+    public AjaxResult page(@RequestBody ${ClassName}Query query) {
+        return ${className}Service.select${ClassName}Page(query);
+    }
+
+    ##    ## 导出Excel（分页+条件）
+    ##    @Log(title = "${functionName}导出", businessType = BusinessType.EXPORT)
+    ##    @PostMapping("/export")
+    ##    public void export(@Validated ${ClassName}Query query, HttpServletResponse response) {
+    ##        List<${ClassName}> list = ${className}Service.select${ClassName}List(query);
+    ##        // 使用 ExcelUtil.exportExcel 导出（需根据项目实际工具类调整）
+    ##        ExcelUtil.exportExcel(response, list, "${functionName}数据", ${ClassName}.class);
+    ##    }
+
+    ## 其他接口（根据需求生成）
+    @GetMapping("/get/{id}")
+    public AjaxResult get(@PathVariable ${pkColumn.javaType} id) {
+        return AjaxResult.success(${className}Service.getById(id));
+    }
+
+    @Log(title = "${functionName}新增", businessType = BusinessType.INSERT)
+    @PostMapping("/add")
+    public AjaxResult add(@RequestBody ${ClassName}Dto ${className}Dto) {
+            ${className}Service.saveOrUpdate(${className}Dto);
+        return AjaxResult.success();
+    }
+
+
+    /**
+     * 删除
+     */
+    @DeleteMapping("/delete/{ids}")
+    public AjaxResult deleteByIds(@PathVariable String ids) {
+            ${className}Service.deleteData(ids);
+        return AjaxResult.success();
+    }
+}

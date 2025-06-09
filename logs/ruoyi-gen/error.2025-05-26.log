@@ -1,0 +1,90 @@
+10:34:28.936 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field genTableMapper in com.szmtr.gen.service.GenTableServiceImpl required a bean of type 'com.szmtr.gen.mapper.GenTableMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.szmtr.gen.mapper.GenTableMapper' in your configuration.
+
+11:15:37.227 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field genTableMapper in com.szmtr.gen.service.GenTableServiceImpl required a bean of type 'com.szmtr.gen.mapper.GenTableMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.szmtr.gen.mapper.GenTableMapper' in your configuration.
+
+11:20:19.558 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field genTableMapper in com.szmtr.gen.service.GenTableServiceImpl required a bean of type 'com.szmtr.gen.mapper.GenTableMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.szmtr.gen.mapper.GenTableMapper' in your configuration.
+
+11:56:00.229 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field genTableMapper in com.szmtr.gen.service.GenTableServiceImpl required a bean of type 'com.szmtr.gen.mapper.GenTableMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.szmtr.gen.mapper.GenTableMapper' in your configuration.
+
+15:19:52.593 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field genTableMapper in com.szmtr.gen.service.GenTableServiceImpl required a bean of type 'com.szmtr.gen.mapper.GenTableMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.szmtr.gen.mapper.GenTableMapper' in your configuration.
+

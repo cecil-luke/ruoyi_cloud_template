@@ -1,0 +1,67 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    dynamic:
+      primary: master # 设置默认数据源
+      strict: false # 是否严格匹配数据源，默认false
+      datasource:
+        master: # 主数据源A
+          url: jdbc:mysql://192.168.1.55:3306/szmtr_cloud?useSSL=false&serverTimezone=UTC&serverTimezone=Asia/Shanghai
+          username: root
+          password: 123456
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          type: com.zaxxer.hikari.HikariDataSource # 推荐使用HikariCP
+          hikari:
+            connection-timeout: 30000
+            maximum-pool-size: 20
+            minimum-idle: 5
+  # redis 配置
+  redis:
+    # 地址
+    host: 127.0.0.1
+    # 端口，默认为6379
+    port: 6379
+    # 数据库索引
+    database: 0
+    # 密码
+    password:
+    # 连接超时时间
+    timeout: 100s
+    lettuce:
+      pool:
+        # 连接池中的最小空闲连接
+        min-idle: 0
+        # 连接池中的最大空闲连接
+        max-idle: 8
+        # 连接池的最大数据库连接数
+        max-active: 8
+
+  rabbitmq:
+    host: 10.27.20.201
+    port: 5672
+    username: guest
+    password: guest
+    # 使用 JSON 序列化消息（可选）
+    template:
+      exchange: fanout.exchange
+    listener:
+      simple:
+        acknowledge-mode: manual  # 手动确认消息（可选）
+    queueName: queueA    #队列
+    switchName: fanout.exchange  #交换机的交换通道
+    routingKey:
+
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册地址
+        server-addr: 127.0.0.1:8848
+      config:
+        # 配置中心地址
+        server-addr: 127.0.0.1:8848
+        # 配置文件格式
+        file-extension: yml
+        # 共享配置
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
